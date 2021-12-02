@@ -1,0 +1,35 @@
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #7a5cff 0%, #3cd644 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    padding-top: 0;
+    user-select: none;
+    margin: 0;
+}
+
+.react-calculator {
+    position: relative;
+    border-radius: 48% 52% 77% 23% / 45% 30% 70% 55% ;
+    margin: 0 auto;
+    width: 320px;
+    min-height: 200px;
+    background-color: #292f36;  
+    box-shadow: 0 19px 38px rgba(19, 19, 19, .24),
+0 15px 12px rgba(19, 19, 19, .12);
+    animation: forma 10s linear infinite;
+}
+
+@keyframes forma {
+    0% {border-radius: 48% 52% 77% 23% / 45% 30% 70% 55% ;}
+    25% {border-radius: 77% 23% 48% 52% / 15% 56% 44% 85% ;}
+    50% {border-radius: 86% 14% 74% 26% / 57% 75% 25% 43% ;}
+    75% {border-radius: 40% 60% 31% 69% / 74% 58% 42% 26% ;}
+    100% {border-radius: 48% 52% 77% 23% / 45% 30% 70% 55% ;}
+}
