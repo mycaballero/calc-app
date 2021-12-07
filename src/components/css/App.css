@@ -16,14 +16,15 @@ body {
 
 .react-calculator {
     position: relative;
-    border-radius: 48% 52% 77% 23% / 45% 30% 70% 55% ;
+    border-radius: 10% ;
     margin: 0 auto;
+    padding: 10pt;
     width: 320px;
     min-height: 200px;
     background-color: #292f36;  
     box-shadow: 0 19px 38px rgba(19, 19, 19, .24),
 0 15px 12px rgba(19, 19, 19, .12);
-    animation: forma 10s linear infinite;
+    /*animation: forma 10s linear infinite;*/
 }
 
 @keyframes forma {

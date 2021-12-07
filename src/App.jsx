@@ -1,6 +1,6 @@
 // importaciones
 import React from 'react';
-import './App.css';
+import './components/css/App.css';
 
 
 // generar componente -> Arrow function
@@ -8,7 +8,9 @@ const App = () => {
 
     // lo que se ejecuta
     return (<main className="react-calculator">
-                Hola Mundo Componente
+                <div>
+                    <h1 className="calc-title">Calculadora</h1>
+                </div>
             </main>);
 };
 
