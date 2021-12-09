@@ -1,10 +1,11 @@
-// Siempre se importar
+// Siempre se importa
 import React from "react"
+import PropTypes from "prop-types" // npm install prop-types, y luego importas el paquete
 
 // lo que se va a ejecutar
-const Result = (props) => {
+const Result = ({value}) => { // const Result = (props) => { se pudiera hacer así pero el como está hace mas cortoa el codigo
     // concepto de  object destructuring 
-    const {value} = props
+    //  const {value} = props // metemos todos los elementos del objeto listandolos en una constante e igualandolos al l nombre del parametro que lo trae
     console.log("Result",value)
     return (
         <div className="result-calc">
@@ -18,6 +19,17 @@ const Result = (props) => {
         </div>
     )
 }
+
+// para usar el proptype y validar propiedades
+Result.propTypes = {
+    value: PropTypes.string.isRequired
+} // esta validación en producción no se ejecuta solo en desarrollo
+
+// establecer valores por defecto
+Result.defaultProps = {
+    value: "0"
+}
+
 
 // se debe exportar
 export default Result

@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "calculator";
+    src: url("../fonts/Calculator.ttf");
+}
 html,
 body {
     position: relative;
@@ -43,6 +47,11 @@ body {
 .calc-title {
     font-family: 'Courier New', Courier, monospace;
     color: #ffce5c;
+    text-align: center;
+    background-color: #706f6f;
+    padding: 1rem;
+    border-radius: 20px;
+    margin-block-start: auto;
 }
 
 button {
@@ -66,17 +75,19 @@ button:hover {
 .result-calc {
     position: relative;
     width: 320px;
-    height: 80px;
-    padding: 8px;
+    padding: 0 8px;
     overflow: hidden;
     background-color: rgba(19, 19, 19, .64);
-    font-size: 32px;
-    line-height: 2;
+    font-size: 40px;
+    line-height: 1.5;
     color: #60d63c;
     text-align: right;
     direction: rtl;
     white-space: nowrap;
     box-sizing: border-box;
+}
+.result-calc > span {
+    font-family: 'calculator';
 }
 
 .functions button, .math-operations button {
