@@ -1,12 +1,18 @@
 // importaciones
 import React from 'react'
 import Result from './components/Result'
+import Button from './components/Button'
 // estilos
-import './components/css/App.css'
+import './components/assets/css/App.css'
 
 
 // generar componente -> Arrow function
 const App = () => {
+    // funcion del boton
+    const clickNumberFunction = number => { // los parametros en las funciones generalmene están entre (), pero si es solo un parametro puede dejarse solo 
+        console.log(number)
+    }
+
     // *debugger* para interrumpir y spervisar en una linea de código
     // lo que se ejecuta
     console.log("app renderizada")
@@ -17,7 +23,7 @@ const App = () => {
                         <Result value={"0"}></Result>
                     </div>
                     <div className="numbers">
-                        <button>1</button>
+                        <Button number="1" clickNumber={clickNumberFunction}></Button>
                         <button>2</button>
                         <button>3</button>
                         <button>4</button>
