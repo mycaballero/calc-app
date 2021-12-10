@@ -4,11 +4,11 @@ import PropTypes from "prop-types"
 
 const MathOpetations = ({onClikOperation, onClickEqual}) =>  (
     <section className="math-operations">
-        <Button number="+" clickHandler={onClikOperation}></Button>
-        <Button number="-" clickHandler={onClikOperation}></Button>
-        <Button number="*" clickHandler={onClikOperation}></Button>
-        <Button number="/" clickHandler={onClikOperation}></Button>
-        <Button number="=" clickHandler={onClickEqual}></Button>
+        <Button number="+" clickHandler={onClikOperation}/>
+        <Button number="-" clickHandler={onClikOperation}/>
+        <Button number="*" clickHandler={onClikOperation}/>
+        <Button number="/" clickHandler={onClikOperation}/>
+        <Button number="=" clickHandler={onClickEqual}/>
     </section>
 )
 
