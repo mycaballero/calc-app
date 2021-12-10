@@ -1,7 +1,8 @@
-// importaciones
+// importaciones (Los componentes se deben importar en orden afabetico)
 import React from 'react'
-import Result from './components/Result'
 import Button from './components/Button'
+import MathOpetations from './components/MathOperations'
+import Result from './components/Result'
 // estilos
 import './components/assets/css/App.css'
 
@@ -9,7 +10,7 @@ import './components/assets/css/App.css'
 // generar componente -> Arrow function
 const App = () => {
     // funcion del boton
-    const clickNumberFunction = number => { // los parametros en las funciones generalmene están entre (), pero si es solo un parametro puede dejarse solo 
+    const clickHandlerFunction = number => { // los parametros en las funciones generalmene están entre (), pero si es solo un parametro puede dejarse solo 
         console.log(number)
     }
 
@@ -23,16 +24,16 @@ const App = () => {
                         <Result value={"0"}></Result>
                     </div>
                     <div className="numbers">
-                        <Button number="1" clickNumber={clickNumberFunction}></Button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
-                        <button>0</button>
+                        <Button number="1" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="2" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="3" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="4" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="5" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="6" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="7" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="8" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="9" clickHandler={clickHandlerFunction}></Button>
+                        <Button number="0" clickHandler={clickHandlerFunction}></Button>
                     </div>
                     <div className="functions">
                         <button>
@@ -42,13 +43,14 @@ const App = () => {
                             R
                         </button>
                     </div>
-                    <div className="math-operations">
-                        <button>+</button>
-                        <button>-</button>
-                        <button>*</button>
-                        <button>/</button>
-                        <button>=</button>
-                    </div>
+                    <MathOpetations 
+                        onClikOperation={operation => (
+                            console.log("operación",operation)
+                        )}
+                        onClickEqual={operation => (
+                            console.log("Botón de ",operation)
+                        )}
+                        />
                 </div>
             </main>)
 }
