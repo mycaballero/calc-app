@@ -7,9 +7,19 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to bottom right, #7a5cff 0%, #3cd644 100%);
+    /*background-image: linear-gradient(to bottom right, #ff1e1e 0%, #fff019 100%);*/
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background: linear-gradient(308deg, #ff0303, #ffac03, #fffa03, #69ff03, #03ff9d, #038eff, #3503ff, #dc03ff, #ff0391);
+    background-size: 1800% 1800%;
+
+    animation: gradientmove 50s ease infinite;
+}
+
+@keyframes gradientmove {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
 }
 
 body {

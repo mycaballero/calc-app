@@ -6,6 +6,7 @@ import MathOpetations from './components/MathOperations'
 import Result from './components/Result'
 // estilos
 import './components/assets/css/App.css'
+import './components/assets/css/Button.css'
 
 
 // generar componente -> Arrow function
