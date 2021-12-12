@@ -1,5 +1,5 @@
 import React from "react"
-import propTypes from "prop-types"
+import PropTypes from "prop-types"
 
 const Button = ({type, number, clickHandler}) => (
     <button className={type} onClick={() => clickHandler(number)}>
@@ -9,8 +9,8 @@ const Button = ({type, number, clickHandler}) => (
 
 
 Button.propTypes = { // Fail Fast *Es mejor hacer que nuestra aplicación falle rapidamente que ver los fallos en producción*
-    type: propTypes.string,
-    number: propTypes.string.isRequired,
-    clickHandler: propTypes.func.isRequired
+    type: PropTypes.string,
+    number: PropTypes.string.isRequired,
+    clickHandler: PropTypes.func.isRequired
 }
 export default Button

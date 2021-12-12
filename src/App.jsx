@@ -1,12 +1,12 @@
 // importaciones (Los componentes se deben importar en orden afabetico)
 import React from 'react'
-import Button from './components/Button'
+import Button from './components/Button/Button.jsx'
 import Functions from './components/Functions'
 import MathOpetations from './components/MathOperations'
 import Result from './components/Result'
 // estilos
 import './components/assets/css/App.css'
-import './components/assets/css/Button.css'
+import './components/Button/Button.css'
 
 
 // generar componente -> Arrow function
