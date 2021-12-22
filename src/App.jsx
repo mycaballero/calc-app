@@ -1,5 +1,9 @@
+// para el warning de eslint que genera el aviso de la función eval
+/* eslint no-eval: 0 */
+
 // importaciones (Los componentes se deben importar en orden afabetico)
-import React from 'react'
+import React, {useState} from 'react' // Se pueden importar recursos de un componente con Option Destrcturing
+import words from 'lodash.words'
 import Functions from './components/Functions'
 import MathOpetations from './components/MathOperations'
 import Numbers from './components/Numbers/Numbers.jsx'
@@ -9,37 +13,66 @@ import './components/assets/css/App.css'
 import './components/Button/Button.css'
 
 
+
+
 // generar componente -> Arrow function
 const App = () => {
+
+// Hooks "useState" // usaremmps array Destructuring pero dejaré el original como cmentaio
+/*
+    const arrayTextFunctionModifyText = useState("")
+
+// separados arrayTextFunctionModifyText["Texto", Función]
+
+    // 1° posición devuelve un valor(en este caso es "")
+    const arrayText = arrayTextFunctionModifyText[0]
+    // 2° devuelve una función que modificrá el valor
+    const fModify = arrayTextFunctionModifyText[1]
+*/
+// hook "useState" + array Destructuing + Mejora de nombres [xxxx, setxxxx] lo ideal
+const [nNumber, setNnumber] = useState("")
+// usamos lodahs para separar el elemento que tenemos
+const items = words(nNumber, /[^-^+^*^/]+/g)
+// operacion ternaria = (condición) ? (si se cumple) : (si no se cumple)
+const valueItem = items.length > 0 ? items[items.length-1] : "0"
+//console.log("renderización de items", valueItem)
     // *debugger* para interrumpir y spervisar en una linea de código
     // lo que se ejecuta
-    console.log("app renderizada")
+    //console.log("app renderizada")
     return (<main className="main-calculator"> 
                 <div className="react-calculator">
                     <div>
                         <h1 className="calc-title">Calculadora</h1>
-                        <Result value={"0"}></Result>
+                        <Result value={valueItem}></Result>
                     </div>
-                    <Numbers onClickNumber={number => (
-                        console.log(number)) 
-                        }/>
+                    <Numbers onClickNumber={number => {
+                        //console.log(`presionó ${number}`)
+                        setNnumber(`${nNumber}${number}`) // forma de concatenar variables ES6 `${variable1}espacaios o string ${variable2}`
+                    }}/>
                     <div className="functions">
                         <Functions 
-                        clearFunction={funct => (
-                            console.log("presionó ",funct)
-                        )}
-                        deleteFunction={funct => (
-                            console.log("presionó ",funct)
-                        )}
+                        clearFunction={() => {
+                            //console.log("presionó Clear")
+                            setNnumber("")
+                        }}
+                        deleteFunction={funct => { 
+                            if (nNumber.length > 0) {
+                                //console.log("presionó ",funct)
+                                const newNumber = nNumber.substring(0, nNumber.length - 1)
+                                setNnumber(newNumber)
+                            }
+                        }}
                         />
                     </div>
                     <MathOpetations 
-                        onClikOperation={operation => (
-                            console.log("operación",operation)
-                        )}
-                        onClickEqual={operation => (
-                            console.log("Botón de ",operation)
-                        )}
+                        onClikOperation={operation =>{ 
+                            //console.log("operación",operation)
+                            setNnumber(`${nNumber}${operation}`)
+                        }}
+                        onClickEqual={equal => {
+                            //console.log("Botón de ",equal)
+                            setNnumber(eval(nNumber).toString()) // la función eval() ejecuta cualquier operacion dentro de un string * es peligrosa *
+                        }}
                         />
                 </div>
             </main>)
