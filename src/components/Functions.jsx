@@ -8,7 +8,6 @@ const Functions = ({clearFunction, deleteFunction}) => (
         <Button number="&larr;" clickHandler={deleteFunction}></Button>
     </section>
 )
-
 Functions.propTypes = {
     clearFunction: PropTypes.func.isRequired,
     deleteFunction: PropTypes.func.isRequired

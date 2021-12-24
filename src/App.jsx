@@ -12,12 +12,8 @@ import Result from './components/Result'
 import './components/assets/css/App.css'
 import './components/Button/Button.css'
 
-
-
-
 // generar componente -> Arrow function
 const App = () => {
-
 // Hooks "useState" // usaremmps array Destructuring pero dejaré el original como cmentaio
 /*
     const arrayTextFunctionModifyText = useState("")
@@ -35,10 +31,8 @@ const [nNumber, setNnumber] = useState("")
 const items = words(nNumber, /[^-^+^*^/]+/g)
 // operacion ternaria = (condición) ? (si se cumple) : (si no se cumple)
 const valueItem = items.length > 0 ? items[items.length-1] : "0"
-//console.log("renderización de items", valueItem)
     // *debugger* para interrumpir y spervisar en una linea de código
     // lo que se ejecuta
-    //console.log("app renderizada")
     return (<main className="main-calculator"> 
                 <div className="react-calculator">
                     <div>
@@ -46,18 +40,15 @@ const valueItem = items.length > 0 ? items[items.length-1] : "0"
                         <Result value={valueItem}></Result>
                     </div>
                     <Numbers onClickNumber={number => {
-                        //console.log(`presionó ${number}`)
                         setNnumber(`${nNumber}${number}`) // forma de concatenar variables ES6 `${variable1}espacaios o string ${variable2}`
                     }}/>
                     <div className="functions">
                         <Functions 
                         clearFunction={() => {
-                            //console.log("presionó Clear")
                             setNnumber("")
                         }}
                         deleteFunction={funct => { 
                             if (nNumber.length > 0) {
-                                //console.log("presionó ",funct)
                                 const newNumber = nNumber.substring(0, nNumber.length - 1)
                                 setNnumber(newNumber)
                             }
@@ -77,6 +68,5 @@ const valueItem = items.length > 0 ? items[items.length-1] : "0"
                 </div>
             </main>)
 }
-
 // exportar
 export default App

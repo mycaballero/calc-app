@@ -11,8 +11,6 @@ const MathOpetations = ({onClikOperation, onClickEqual}) =>  (
         <Button number="=" clickHandler={onClickEqual}/>
     </section>
 )
-
-
 MathOpetations.propTypes = {
     onClikOperation: PropTypes.func.isRequired,
     onClickEqual: PropTypes.func.isRequired
