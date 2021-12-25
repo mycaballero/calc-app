@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 const Button = ({type, number, clickHandler}) => (
     <button className={type} onClick={() => clickHandler(number)}>
-        <samp>{number}</samp>
+        <span>{number}</span>
     </button>
 )
 
